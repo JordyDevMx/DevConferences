@@ -1,0 +1,49 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.bloques {
+   @include m.contenedor;
+   @include m.tablet {
+        margin-top: 2rem;
+   }
+
+   &__grid {
+       @include m.grid(1, 3rem);
+       @include m.desktop {
+           @include m.grid(2, 3rem);
+       }
+   }
+}
+
+.bloque {
+    padding: 3rem;
+    color: v.$negro;
+    border-radius: 1rem;
+    &__heading {
+        margin-bottom: 2rem;
+        font-size: 3.6rem;
+    }
+    &__contenido {
+        margin-bottom: .5rem;
+        border-bottom: solid 1px v.$gris-oscuro;
+    }
+    &__texto {
+        margin: 1rem 0;
+
+        &--ponente {
+            font-weight: bold;
+        }
+
+        &--lugares {
+            font-weight: bold;
+            color: v.$principal;
+        }
+
+        &--cantidad {
+            color: v.$verde;
+            font-weight: v.$black;
+            font-size: 4rem;
+            text-align: center;
+        }
+    }
+}

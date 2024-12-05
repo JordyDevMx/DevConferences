@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.pagina_404 {
+    margin-bottom: 5rem;
+    text-align: center;
+
+    &__contenedor {
+        @include m.contenedor-sm;
+    }
+
+    &__grid {
+        @include m.grid(1, 5rem);
+        align-items: center;
+
+        @include m.tablet {
+            @include m.grid(2, 5rem);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    &__texto {
+        font-size: 2.5rem;
+    }
+
+    &__enlace {
+        @include m.boton(v.$azul, v.$blanco);
+    }
+}
